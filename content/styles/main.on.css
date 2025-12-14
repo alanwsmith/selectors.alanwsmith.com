@@ -1,7 +1,21 @@
 [!- include "styles/_includes/highlights.css" -!]
 
+details > :where(:not(:first-child)) {
+  padding-left: 1.4rem;
+}
+
+
 [!- for f in files !]
   [!- if f.folder == "styles/_elements" !]
   [! include f.input_path !]
   [!- endif !]
 [!- endfor -!]
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}

@@ -636,7 +636,9 @@ font-weight: bold;
 }
 }
 
-::marker {
+details > :where(:not(:first-child)) {
+  padding-left: 1.4rem;
+}::marker {
   color: var(--default-color);
 }a {
   color: var(--link-color);
@@ -683,7 +685,12 @@ a:focus {
 }.code-block {
   background: var(--match-faded);
   border-radius: var(--default-radius);
-  margin: var(--default-margin);
+  padding: var(--default-padding);
+}
+
+.content-block {
+  background: var(--match-faded);
+  border-radius: var(--default-radius);
   padding: var(--default-padding);
 }dd {
   margin-left: var(--default-margin);
@@ -889,4 +896,11 @@ main > :where(:not(:first-child)) {
 }video {
   display: block;
   max-width: 100%;
+}body {
+  font-family: system-ui, sans-serif;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }

@@ -5,7 +5,44 @@
   <h1>CSS Selector Crib Notes</h1>
 </hgroup>
 
-<p>under construction</p>
+[! for folder in folders !]
+  [! if folder.path_parts[0] == "examples" and folder.path_parts[1] !]
+    [! if folder.folder_parts[1] !]
+      [! set example_folder = folder.path_part_strings[1] + "/_title.html" !]
+      [! set example_content_path = folder.path_part_strings[1] + "/_content.html" !]
+      [! set example_styles_path = folder.path_part_strings[1] + "/_styles.css" !]
+      <style>
+        [! include example_styles_path !]
+      </style>
+      <div class="example">
+        <div class="example-title">[! include example_folder !]</div>
+        <div class="example[@ loop.index1 @] two-columns">
+          <div class="default-padding">
+            [! include example_content_path !]
+          </div>
+          <div>
+            [! filter block_highlight("css") !] 
+              [! include example_styles_path !]
+            [! endfilter !]
+            <details><summary>HTML</summary>
+              [! filter block_highlight("html") !] 
+                [! include example_content_path !]
+              [! endfilter !]
+            </details>
+          </div>
+        </div>
+      </div>
+
+    [! endif !]
+  [! endif !]
+[! endfor !]
+
+[#
+    [! else !]
+      [! set example_title_path = folder.path_part_strings[2] + "/_title.html" !]
+      <h4>[! include example_title_path !]</h4>
+
+#]
 
 
 [!- endblock -!]
