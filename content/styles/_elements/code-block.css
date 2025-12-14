@@ -1,6 +1,11 @@
 .code-block {
   background: var(--match-faded);
   border-radius: var(--default-radius);
-  margin: var(--default-margin);
+  padding: var(--default-padding);
+}
+
+.content-block {
+  background: var(--match-faded);
+  border-radius: var(--default-radius);
   padding: var(--default-padding);
 }
