@@ -1,3 +1,4 @@
 details:has(details [data-target[@ loop.index @]]) > summary {
   color: red;
 }
+
