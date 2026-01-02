@@ -900,6 +900,12 @@ main > :where(:not(:first-child)) {
   font-family: system-ui, sans-serif;
 }
 
+.example {
+  border-left: 1px solid var(--faded-accent-color);
+  margin-left: 1.4rem;
+  padding-left: 1.4rem;
+}
+
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 2fr;

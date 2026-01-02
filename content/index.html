@@ -14,24 +14,28 @@
       <style>
         [! include example_styles_path !]
       </style>
-      <div class="example">
-        <div class="example-title">[! include example_folder !]</div>
-        <div class="example[@ loop.index1 @] two-columns">
-          <div class="default-padding">
-            [! include example_content_path !]
+      <details class="example">
+        <summary class="example-title">[! include example_folder !]</summary>
+        <div class="example-[@ loop.index1 @] two-columns">
+          <div class="">
+            <div>Output</div>
+            <div>
+              [! include example_content_path !]
+            </div>
           </div>
           <div>
+            <div>CSS</div>
             [! filter block_highlight("css") !] 
               [! include example_styles_path !]
             [! endfilter !]
-            <details><summary>HTML</summary>
+            <div>HTML</div>
               [! filter block_highlight("html") !] 
                 [! include example_content_path !]
               [! endfilter !]
             </details>
           </div>
         </div>
-      </div>
+      </details>
     [! endif !]
   [! endif !]
 [! endfor !]
